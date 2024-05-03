@@ -1,0 +1,79 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  display: block;
+  background-color: black;
+  width: 200px;
+  height: 300px;
+  margin: 15vh auto;
+  padding: 100px;
+  filter: contrast(30);
+}
+.dot {
+  display: block;
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(20px);
+}
+.main {
+  width: 200px;
+  height: 200px;
+}
+.sub1, .sub2, .sub3, .sub4 {
+  width: 150px;
+  height: 150px;
+}
+.sub1 {
+  transform-origin: 60% 50%;
+  animation: 3s ease-in-out 0s infinite sub, 8s linear -2s infinite col;
+}
+.sub2 {
+  transform-origin: 50% 60%;
+  animation: 2s ease-in-out 0s infinite sub, 8s linear 0s infinite col;
+}
+.sub3 {
+  transform-origin: 80% 50%;
+  animation: 3s linear 0s infinite sub, 8s linear -4s infinite col;
+}
+.sub4 {
+  transform-origin: 50% 80%;
+  animation: 4s linear 0s infinite sub, 8s linear -6s infinite col;
+}
+
+@keyframes sub {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes col {
+  0% {
+    background-color: hsl(0, 80%, 60%);
+  }
+  25% {
+    background-color: hsl(270, 80%, 60%);
+  }
+  50% {
+    background-color: hsl(90, 80%, 60%);
+  }
+  75% {
+    background-color: hsl(180, 80%, 60%);
+  }
+  100% {
+    background-color: hsl(360, 80%, 60%);
+  }
+}
